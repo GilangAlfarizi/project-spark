@@ -10,17 +10,17 @@
             <div class="card shadow border-start-warning py-2" style="margin-left: -3px;padding-right: 0px;margin-right: -136px;">
                 <div class="card-body" style="padding-right: 0px;margin-right: -3px;">
                     <div class="row align-items-center no-gutters">
-                        <div class="col me-2">
+                        <div class="col ml-3">
                             <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span style="background: #ffffff;color: var(--bs-blue);">PLAT NOMOR</span></div>
                             <div class="text-dark fw-bold h5 mb-0"></div>
                         </div>
-                    </div><input type="text" style="margin-right: 83px;margin-left: -8px;border-style: initial;border-radius: 7px;background: rgb(245,238,238);height: 48px;width: 325.6px;" placeholder="Masukan Plat Nomor Kendaraan">
+                    </div><input type="text" style="border-style: initial;border-radius: 7px;background: rgb(245,238,238);height: 48px;width: 325.6px;" placeholder="Masukan Plat Nomor Kendaraan">
                 </div>
             </div>
             <div class="card shadow border-start-warning py-2" style="margin-top: 18px;padding-left: 0px;padding-right: 0px;margin-right: -135px;">
                 <div class="card-body" style="margin-right: -4px;">
                     <div class="row align-items-center no-gutters">
-                        <div class="col me-2">
+                        <div class="col ml-3">
                             <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span style="background: #ffffff;color: var(--bs-blue);">Waktu</span></div>
                             <div class="text-dark fw-bold h5 mb-0"></div>
                         </div>
@@ -30,7 +30,7 @@
             <div class="card shadow border-start-warning py-2" style="margin-top: 18px;padding-left: 0px;padding-right: 0px;margin-right: -135px;">
                 <div class="card-body" style="margin-right: -4px;">
                     <div class="row align-items-center no-gutters">
-                        <div class="col me-2">
+                        <div class="col ml-3">
                             <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span style="background: #ffffff;color: var(--bs-blue);">jenis kendaraan</span></div>
                             <div class="text-dark fw-bold h5 mb-0"></div>
                         </div>
@@ -41,6 +41,8 @@
                     </select>
                 </div>
             </div>
+            <button class="btn btn-primary mt-4 mr-3 px-4" type="button">Masuk</button>
+            <button class="btn btn-primary mt-4 px-4" type="button">Keluar</button>
         </div>
     </div>
     <div class="row">
