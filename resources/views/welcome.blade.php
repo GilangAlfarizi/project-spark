@@ -39,12 +39,15 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="px-4 py-5 my-5 text-center text-white">
+                    <a href="{{route('landing')}}">
                     <img class="d-block img-fluid mx-auto mb-4" src="{{asset('img/logoweb.png')}}" alt="logo" width="72" height="57">
+                    </a>
                     <h1 class="display-5 fw-bold">Spark</h1>
                     <div class="col-lg-6 mx-auto">
-                      <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                      <p class="mb-4">With Spark, campus parking management becomes more efficient and effective. The system offers better administration to optimize parking resources and improve overall parking experience.</p>
                       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">GET STARTED</button>
+                        <a class="btn btn-primary btn-lg px-4 gap-3" href="http://127.0.0.1:8000/dashboard" role="button">GET STARTED</a>
+                        {{-- <button type="button" class="btn btn-primary btn-lg px-4 gap-3" href="http://127.0.0.1:8000/dashboard">GET STARTED</button> --}}
                       </div>
                     </div>
                 </div>

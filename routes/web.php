@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('landing');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -25,6 +25,10 @@ Route::get('/dashboard', function () {
 Route::get('/about', function () {
     return view('about');
 })->middleware(['auth', 'verified'])->name('about');
+
+Route::get('/vehicles', function () {
+    return view('vehicles');
+})->middleware(['auth', 'verified'])->name('vehicles');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
