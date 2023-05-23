@@ -8,42 +8,56 @@
     <div class="container-fluid">
         <div class="row mt-4 d-flex">
             <div class="col-md-6 col-xl-3 mb-4">
-                <div class="card shadow border-start-warning py-2" style="margin-left: -3px;padding-right: 0px;margin-right: -136px;">
-                    <div class="card-body" style="padding-right: 0px;margin-right: -3px;">
-                        <div class="row align-items-center no-gutters">
-                            <div class="col me-2">
-                                <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span style="background: #ffffff;color: var(--bs-blue);">PLAT NOMOR</span></div>
-                                <div class="text-dark fw-bold h5 mb-0"></div>
-                            </div>
-                        </div><input type="text" style="border-style: initial;border-radius: 7px;background: rgb(245,238,238);height: 48px;width: 325.6px;" placeholder="Masukan Plat Nomor Kendaraan">
+                <form action="" method="POST" >
+                    @csrf
+                    <div class="card shadow border-start-warning mt-2" style="padding-left: 0px;padding-right: 0px;margin-right: -135px;">
+                        <div class="card-body" style="margin-right: -4px;">
+                            <div class="row align-items-center no-gutters">
+                                <div class="col me-2">
+                                    <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span style="background: #ffffff;color: var(--bs-blue);">PLAT NOMOR</span></div>
+                                    <div class="text-dark fw-bold h5 mb-0"></div>
+                                </div>
+                            </div><input type="text" name="plat" style="border-style: initial;border-radius: 7px;background: rgb(245,238,238);height: 48px;width: 325.6px;" placeholder="Masukan Plat Nomor Kendaraan">
+                        </div>
                     </div>
-                </div>
-                <div class="card shadow border-start-warning py-2" style="margin-top: 18px;padding-left: 0px;padding-right: 0px;margin-right: -135px;">
-                    <div class="card-body" style="margin-right: -4px;">
-                        <div class="row align-items-center no-gutters">
-                            <div class="col me-2">
-                                <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span style="background: #ffffff;color: var(--bs-blue);">Waktu</span></div>
-                                <div class="text-dark fw-bold h5 mb-0"></div>
-                            </div>
-                        </div><input type="datetime-local" style="border-radius: 7px;width: 238.4px;height: 52px;background: rgb(245,238,238);border-style: initial;">
+                    <div class="card shadow border-start-warning mt-2" style="padding-left: 0px;padding-right: 0px;margin-right: -135px;">
+                        <div class="card-body" style="margin-right: -4px;">
+                            <div class="row align-items-center no-gutters">
+                                <div class="col me-2">
+                                    <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span style="background: #ffffff;color: var(--bs-blue);">Tanggal</span></div>
+                                    <div class="text-dark fw-bold h5 mb-0"></div>
+                                </div>
+                            </div><input type="date" name="tanggal" style="border-radius: 7px;width: 238.4px;height: 52px;background: rgb(245,238,238);border-style: initial;">
+                        </div>
                     </div>
-                </div>
-                <div class="card shadow border-start-warning py-2" style="margin-top: 18px;padding-left: 0px;padding-right: 0px;margin-right: -135px;">
-                    <div class="card-body" style="margin-right: -4px;">
-                        <div class="row align-items-center no-gutters">
-                            <div class="col me-2">
-                                <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span style="background: #ffffff;color: var(--bs-blue);">jenis kendaraan</span></div>
-                                <div class="text-dark fw-bold h5 mb-0"></div>
-                            </div>
-                        </div><select style="width: 144.8px;height: 43.2px;background: rgb(245,238,238);border-style: initial;border-radius: 7px;">
-                            <option value="">Pilih</option>
-                            <option value="12">Mobil</option>
-                            <option value="13">Motor</option>
-                        </select>
+                    <div class="card shadow border-start-warning mt-2" style="spadding-left: 0px;padding-right: 0px;margin-right: -135px;">
+                        <div class="card-body" style="margin-right: -4px;">
+                            <div class="row align-items-center no-gutters">
+                                <div class="col me-2">
+                                    <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span style="background: #ffffff;color: var(--bs-blue);">Waktu</span></div>
+                                    <div class="text-dark fw-bold h5 mb-0"></div>
+                                </div>
+                            </div><input type="time" name="jam_masuk" style="border-radius: 7px;width: 238.4px;height: 52px;background: rgb(245,238,238);border-style: initial;">
+                        </div>
                     </div>
-                </div>
-                <button type="button" class="mt-4 px-4 mr-3 btn btn-primary">Masuk</button>
-                <button type="button" class="mt-4 px-4 btn btn-outline-danger">Keluar</button>
+                    <div class="card shadow border-start-warning mt-2" style="padding-left: 0px;padding-right: 0px;margin-right: -135px;">
+                        <div class="card-body" style="margin-right: -4px;">
+                            <div class="row align-items-center no-gutters">
+                                <div class="col me-2">
+                                    <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span style="background: #ffffff;color: var(--bs-blue);">jenis kendaraan</span></div>
+                                    <div class="text-dark fw-bold h5 mb-0"></div>
+                                    <select name="jenis_kendaraan" style="width: 144.8px;height: 43.2px;background: rgb(245,238,238);border-style: initial;border-radius: 7px;">
+                                        <option value="">Pilih</option>
+                                        <option value="Mobil">Mobil</option>
+                                        <option value="Motor">Motor</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="mt-4 px-4 mr-3 btn btn-primary">Submit</button>
+                    <button type="button" class="mt-4 px-4 btn btn-outline-danger">Keluar</button>
+                </form>
             </div>
             <div class="col">
                 <div class="card shadow border-start-primary py-2" style="background: #ffc941;margin-left: 431px;">

@@ -10,20 +10,33 @@
             <div class="card shadow card-body mt-4">
                 <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
                     <table class="table my-0" border="1px">
-                        <tr>
-                            <th>ID</th>
-                            <th>Plat Kendaraan</th>
-                            <th>Jenis Kendaraan</th>
-                            <th>Jam Masuk</th>
-                        </tr>
-                        {{-- @foreach ($vehicles as $vehicle)
+                        <thead>
                             <tr>
-                                <td>{{ $vehicles->id }}</td>
-                                <td>{{ $vehicles->plat }}</td>
-                                <td>{{ $vehicles->jenis_kendaraan }}</td>
-                                <td>{{ $vehicles->timestamps }}</td>
+                                <th>Plat Kendaraan</th>
+                                <th>Jenis Kendaraan</th>
+                                <th>Tanggal</th>
+                                <th>Jam Masuk</th>
                             </tr>
-                        @endforeach --}}
+                        </thead>
+                            <?php
+                                $vehicles = App\Models\Vehicle::all();
+                            ?>
+                            @foreach ($vehicles as $vehicle)
+                                <tr>
+                                    <td>{{ $vehicle->plat }}</td>
+                                    <td>{{ $vehicle->jenis_kendaraan }}</td>
+                                    <td>{{ $vehicle->tanggal }}</td>
+                                    <td>{{ $vehicle->jam_masuk }}</td>
+                                </tr>
+                            @endforeach
+                            <tfoot>
+                                <tr>
+                                    <th>Plat Kendaraan</th>
+                                    <th>Jenis Kendaraan</th>
+                                    <th>Tanggal</th>
+                                    <th>Jam Masuk</th>
+                                </tr>
+                            </tfoot>
                     </table>
                     
                     {{-- <table class="table my-0" id="dataTable">
