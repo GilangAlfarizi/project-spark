@@ -30,12 +30,15 @@ Route::get('/about', function () {
 
 Route::get('/vehicles', function () {
     return view('vehicles');
-})->middleware(['auth', 'verified'])->name('vehicles');
+})->middleware(['auth', 'verified'])->name('vehicles'); 
+// Route::get('/vehicles', [VehicleController::class, 'index']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // Route::delete('/vehicles', [VehicleController::class, 'destroy'])->name('destroy');
+    Route::delete('/delete/{vehicle}', [VehicleController::class, 'destroy'])->name('destroy');
 });
 
 require __DIR__.'/auth.php';

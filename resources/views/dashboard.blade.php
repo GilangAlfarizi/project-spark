@@ -10,7 +10,7 @@
             <div class="col-md-6 col-xl-3 mb-4">
                 <form action="" method="POST" >
                     @csrf
-                    <div class="card shadow border-start-warning mt-2" style="padding-left: 0px;padding-right: 0px;margin-right: -135px;">
+                    <div class="card shadow border-start-warning" style="padding-left: 0px;padding-right: 0px;margin-right: -135px;">
                         <div class="card-body" style="margin-right: -4px;">
                             <div class="row align-items-center no-gutters">
                                 <div class="col me-2">

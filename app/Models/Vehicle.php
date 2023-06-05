@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vehicle extends Model
 {
-    const updated_at = null;
-
     use HasFactory;
     protected $table = 'vehicles';
     protected $fillable = [

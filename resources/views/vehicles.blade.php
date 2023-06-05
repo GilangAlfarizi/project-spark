@@ -9,7 +9,9 @@
         <div id="wrapper">
             <div class="card shadow card-body mt-4">
                 <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
-                    <table class="table my-0" border="1px">
+                    <table class="table text-center" border="1px">
+                        {{-- Data per page: {{$vehicles->perPage()}}
+                        {{$vehicles->links('pagination::bootstrap-4')}} --}}
                         <thead>
                             <tr>
                                 <th>Plat Kendaraan</th>
@@ -27,6 +29,16 @@
                                     <td>{{ $vehicle->jenis_kendaraan }}</td>
                                     <td>{{ $vehicle->tanggal }}</td>
                                     <td>{{ $vehicle->jam_masuk }}</td>
+                                    <td class="flex">
+                                        <button class="btn btn-success mr-2">Edit</button>
+                                        <form action="{{ route('destroy', $vehicle) }}" method="post">
+                                            @method('delete') @csrf
+                                            <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                        </form>
+                                        <button class="btn btn-secondary ml-2">
+                                            <img src="{{asset('img/print.png')}}" width="20" alt="print">
+                                        </button>
+                                    </td>
                                 </tr>
                             @endforeach
                             <tfoot>

@@ -10,9 +10,9 @@ class VehicleController extends Controller
 {
     public function index()
     {
-        $vehicles = Vehicle::paginate(10);
+        // $vehicles = Vehicle::paginate(3);
         $vehicles = Vehicle::all();
-        return view('index', ['vehicles' => $vehicles]);
+        return view('vehicles.index', ['vehicles' => $vehicles]);
     }
     
     public function store(Request $request)
@@ -29,12 +29,16 @@ class VehicleController extends Controller
         ]);
 
         return redirect('dashboard')->with('status', 'Vehicle has been inserted.');
-        
-        // Vehicle::create($request->all());
     }
-    // public function show($plat)
+
+    // public function edit (Vehicle $vehicle)
     // {
-    //     $vehicle = Vehicles::find
-    //     return view('vehicles', [''])
+
     // }
+
+    public function destroy(Vehicle $vehicle)
+    {
+        $vehicle->delete();
+        return Redirect::route('vehicles');
+    }
 }
