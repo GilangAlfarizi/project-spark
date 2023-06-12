@@ -26,7 +26,8 @@ Route::post('dashboard', [VehicleController::class, 'store']);
 Route::get('/about', function () {
     return view('about');
 })->middleware(['auth', 'verified'])->name('about');
-Route::get('/print/{vehicle}', [VehicleController::class, 'print'])->name('print');
+Route::get('/print/{vehicle}', [VehicleController::class, 'createPDF'])->name('print');
+// Route::get('/print/{vehicle}/pdf', [VehicleController::class, 'createPDF']);
 
 Route::get('/vehicles', [VehicleController::class, 'index'])
     ->middleware(['auth', 'verified'])->name('vehicles'); 

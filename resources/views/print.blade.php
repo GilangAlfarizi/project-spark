@@ -1,19 +1,25 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Print') }}
-        </h2>
-    </x-slot>
-    
-    <div class="container text-center mt-4">
-        <h1>SPARK</h1>
-        <p>Universitas Negeri Semarang</p>
-        <p><strong>Tanggal: </strong>{{ $vehicle->tanggal }}</p>
-        <p><strong>Waktu:</strong> {{ $vehicle->jam_masuk }}</p>
-        <p><strong>Jenis Kendaraan:</strong> {{ $vehicle->jenis_kendaraan }}</p>
-        <p><strong>Code:</strong> {{ $vehicle->plat }}</p>
-        <p class="text-danger fw-bold">Please do not lose the slip</p>
-        <p class="thanks">Have a nice day!</p>
-        <button class="btn btn-success print-btn">Print Slip Parkir</button>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      body {text-align: center;}
+      h1 {color: green;}
+      .warning {color: red;}
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>SPARK</h1>
+      <p>Universitas Negeri Semarang</p>
+      <p><strong>Tanggal: </strong>{{ $vehicles->tanggal }}</p>
+      <p><strong>Waktu:</strong> {{ $vehicles->jam_masuk }}</p>
+      <p><strong>Jenis Kendaraan:</strong> {{ $vehicles->jenis_kendaraan }}</p>
+      <p><strong>Code:</strong> {{ $vehicles->plat }}</p>
+      <p class="warning">Please do not lose the slip</p>
+      <p class="">Thanks, Have a nice day!</p>
     </div>
-</x-app-layout>
+    
+  </body>
+</html>

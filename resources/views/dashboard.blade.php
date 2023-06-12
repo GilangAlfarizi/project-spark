@@ -55,24 +55,37 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="mt-4 px-4 mr-3 btn btn-primary">Submit</button>
+                    <button type="submit" class="mt-2 px-4 mr-3 btn btn-primary">Submit</button>
                     {{-- <button type="button" class="mt-4 px-4 btn btn-outline-danger">Keluar</button> --}}
                 </form>
             </div>
             <div class="col">
-                <div class="card shadow border-start-primary py-2" style="background: #ffc941;margin-left: 431px;">
+                <div class="card shadow border-start-primary py-2 bg-warning" style="margin-left: 431px;">
                     <div class="card-body">
+                            <h6 class="card-title text-primary fw-bold">TOTAL VEHICLE</h6>
+                            <p class="card-text text-black fw-bold fs-4">{{$totalVehicles}}</p>
+                        </div>
+                    {{-- <div class="card-body">
                         <div class="row align-items-center no-gutters">
                             <div class="col me-2">
-                                <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>Terisi</span></div>
-                                <div class="text-dark fw-bold h5 mb-0"><span>{{$totalVehicles}}</span></div>
+                                <div class="card-title text-primary fw-bold text-xs"><h6>TOTAL VEHICLE</h6></div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
+                    {{-- <div class="text-dark fw-bold h5 mb-0"><span>{{$totalVehicles}}</span></div> --}}
                 </div>
-                <div class="card shadow border-start-info py-2" style="background: rgb(255,201,65);margin-top: 15px;margin-left: 432px;">
-                    <div class="card-body">
-                        <div class="row align-items-center no-gutters">
+                <div class="card shadow border-start-info py-2 bg-warning" style="margin-top: 15px;margin-left: 432px;">
+                    {{-- <div class="card-body"> --}}
+                        <div class="card-body">
+                            <h6 class="card-title text-primary fw-bold">INSTRUCTION:</h6>
+                            <ul id="instruction" class="list-group list-group-flush">
+                                <li class="list-group-item bg-warning">1. Enter the details of the vehicle entering the parking lot.</li>
+                                <li class="list-group-item bg-warning">2. Click submit.</li>
+                                <li class="list-group-item bg-warning">3. Go to Vehicles to edit, delete, and print the parking receipt.</li>
+                            </ul>
+                            <style>#instruction {font-size: 10pt}</style>
+                        </div>
+                        {{-- <div class="row align-items-center no-gutters">
                             <div class="col me-2">
                                 <div class="text-uppercase text-info fw-bold text-xs mb-1"><span>KAPASITAS tersedia</span></div>
                                 <div class="row g-0 align-items-center">
@@ -86,7 +99,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

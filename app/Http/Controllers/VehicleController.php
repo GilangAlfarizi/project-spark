@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Vehicle;
+use PDF;
 
 class VehicleController extends Controller
 {
@@ -51,6 +52,15 @@ class VehicleController extends Controller
     public function print (Vehicle $vehicle)
     {
         return view('print', compact('vehicle'));
+    }
+
+    public function createPDF(Vehicle $vehicle)
+    {
+        $vehicles = Vehicle::find($vehicle->id);
+        // $pdf = PDF::loadView('print', compact('vehicles'));
+        $pdf = PDF::loadView('print', ['vehicles' => $vehicles]);
+        $pdf->set_paper('letter','portrait');
+        return $pdf->download('print.pdf');
     }
     
     public function update (Request $request, Vehicle $vehicle)

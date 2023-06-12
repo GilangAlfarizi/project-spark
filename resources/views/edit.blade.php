@@ -25,16 +25,16 @@
                 <div class="col card shadow border-start-warning ml-4">
                     <div class="card-body">
                         <h6 class="text-primary fw-bold ">JAM MASUK</h6>
-                        <input type="time" name="jam_masuk" value="{{$vehicle->jam_masuk}}  ">
+                        <input type="time" name="jam_masuk" value="{{$vehicle->jam_masuk}}">
                     </div>
                 </div>
                 <div class="col card shadow border-start-warning ml-4">
                     <div class="card-body">
                         <h6 class="text-primary fw-bold ">JENIS KENDARAAN</h6>
                         <select name="jenis_kendaraan" value="{{$vehicle->jenis_kendaraan}}">
-                            <option value="">Pilih</option>
-                            <option value="Mobil">Mobil</option>
-                            <option value="Motor">Motor</option>
+                            <option value="{{$vehicle->jenis_kendaraan}}">{{$vehicle->jenis_kendaraan}}</option>
+                            <option value="Car">Car</option>
+                            <option value="Motorcycle">Motorcycle</option>
                         </select>
                     </div>
                 </div>
