@@ -10,9 +10,21 @@ class VehicleController extends Controller
 {
     public function index()
     {
-        // $vehicles = Vehicle::paginate(3);
+        $vehicles = Vehicle::paginate(5);
+        Vehicle::orderBy('created_at', 'asc');
+        return view('vehicles', ['vehicles' => $vehicles]);
+    }
+
+    // public function sort()
+    // {
+    //     $vehicles = Vehicle::orderBy('created_at', 'desc');
+    // }
+
+    public function total()
+    {
         $vehicles = Vehicle::all();
-        return view('vehicles.index', ['vehicles' => $vehicles]);
+        $totalVehicles = $vehicles->count();
+        return view('dashboard', compact('vehicles', 'totalVehicles'));
     }
     
     public function store(Request $request)
@@ -31,10 +43,27 @@ class VehicleController extends Controller
         return redirect('dashboard')->with('status', 'Vehicle has been inserted.');
     }
 
-    // public function edit (Vehicle $vehicle)
-    // {
+    public function edit (Vehicle $vehicle)
+    {
+        return view('edit', compact('vehicle'));
+    }
 
-    // }
+    public function print (Vehicle $vehicle)
+    {
+        return view('print', compact('vehicle'));
+    }
+    
+    public function update (Request $request, Vehicle $vehicle)
+    {
+        $vehicle->update([
+            'plat'=> $request->plat,
+            'jenis_kendaraan'=> $request->jenis_kendaraan,
+            'tanggal'=> $request->tanggal,
+            'jam_masuk'=> $request->jam_masuk
+        ]);
+
+        return Redirect::route('vehicles');
+    }
 
     public function destroy(Vehicle $vehicle)
     {

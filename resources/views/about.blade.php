@@ -8,7 +8,7 @@
         <div class="row mb-4 mb-lg-5">
             <div class="col-md-8 col-xl-6 text-center mx-auto">
                 <h2 style="color: rgb(78,115,223);">Kelompok 8</h2>
-                <p>Curae hendrerit donec commodo hendrerit egestas tempus, turpis facilisis nostra nunc. Vestibulum dui eget ultrices.</p>
+                <p>With Spark, campus parking management becomes more efficient and effective. The system offers better administration to optimize parking resources and improve overall parking experience.</p>
             </div>
         </div>
         <div class="row gy-4 row-cols-2 row-cols-md-4">

@@ -19,25 +19,24 @@ Route::get('/', function () {
     return view('welcome');
 })->name('landing');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [VehicleController::class, 'total'])
+    ->middleware(['auth', 'verified'])->name('dashboard');
 Route::post('dashboard', [VehicleController::class, 'store']);
 
 Route::get('/about', function () {
     return view('about');
 })->middleware(['auth', 'verified'])->name('about');
+Route::get('/print/{vehicle}', [VehicleController::class, 'print'])->name('print');
 
-Route::get('/vehicles', function () {
-    return view('vehicles');
-})->middleware(['auth', 'verified'])->name('vehicles'); 
-// Route::get('/vehicles', [VehicleController::class, 'index']);
+Route::get('/vehicles', [VehicleController::class, 'index'])
+    ->middleware(['auth', 'verified'])->name('vehicles'); 
+Route::get('/edit/{vehicle}', [VehicleController::class, 'edit'])->name('edit');
+Route::patch('/update/{vehicle}', [VehicleController::class, 'update'])->name('update');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    // Route::delete('/vehicles', [VehicleController::class, 'destroy'])->name('destroy');
     Route::delete('/delete/{vehicle}', [VehicleController::class, 'destroy'])->name('destroy');
 });
 
