@@ -16,11 +16,6 @@ class VehicleController extends Controller
         return view('vehicles', ['vehicles' => $vehicles]);
     }
 
-    // public function sort()
-    // {
-    //     $vehicles = Vehicle::orderBy('created_at', 'desc');
-    // }
-
     public function total()
     {
         $vehicles = Vehicle::all();
@@ -57,7 +52,6 @@ class VehicleController extends Controller
     public function createPDF(Vehicle $vehicle)
     {
         $vehicles = Vehicle::find($vehicle->id);
-        // $pdf = PDF::loadView('print', compact('vehicles'));
         $pdf = PDF::loadView('print', ['vehicles' => $vehicles]);
         $pdf->set_paper('letter','portrait');
         return $pdf->download('print.pdf');
